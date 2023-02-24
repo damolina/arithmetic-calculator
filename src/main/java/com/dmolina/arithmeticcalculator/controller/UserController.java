@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(exposedHeaders = {"Access-Control-Allow-Origin","Access-Control-Allow-Credentials"})
+@CrossOrigin(maxAge = 3600)
 @RestController
 @RequestMapping("/api/v1")
 public class UserController {
@@ -25,7 +25,7 @@ public class UserController {
         logger.info("UserController::createUser");
         return userService.saveUser(userRequest);
     }
-
+    @CrossOrigin(origins = "https://calculator-frontend.herokuapp.com", allowedHeaders = "Requestor-Type")
     @PostMapping("/login")
     public ResponseEntity<User> login(@RequestBody UserRequest userRequest) throws ResourceNotFoundException {
         logger.info("UserController::login");
