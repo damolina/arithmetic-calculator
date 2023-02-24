@@ -172,10 +172,18 @@ public class CalculationServiceImpl implements CalculationService{
 
     private static void sumCountPerOperationRequest(String value){
         switch (value){
-            case ADDITION -> countPerOperationRequest.put(ADDITION, countPerOperationRequest.get(ADDITION) + 1);
-            case SUBTRACTION -> countPerOperationRequest.put(SUBTRACTION, countPerOperationRequest.get(SUBTRACTION) + 1);
-            case MULTIPLICATION -> countPerOperationRequest.put(MULTIPLICATION, countPerOperationRequest.get(MULTIPLICATION) + 1);
-            case DIVISION -> countPerOperationRequest.put(DIVISION, countPerOperationRequest.get(DIVISION) + 1);
+            case ADDITION:
+                countPerOperationRequest.put(ADDITION, countPerOperationRequest.get(ADDITION) + 1);
+            break;
+            case SUBTRACTION:
+                countPerOperationRequest.put(SUBTRACTION, countPerOperationRequest.get(SUBTRACTION) + 1);
+            break;
+            case MULTIPLICATION:
+                countPerOperationRequest.put(MULTIPLICATION, countPerOperationRequest.get(MULTIPLICATION) + 1);
+            break;
+            case DIVISION:
+                countPerOperationRequest.put(DIVISION, countPerOperationRequest.get(DIVISION) + 1);
+            break;
         }
     }
 
