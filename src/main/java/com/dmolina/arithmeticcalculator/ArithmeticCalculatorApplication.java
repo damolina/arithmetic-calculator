@@ -21,6 +21,7 @@ public class ArithmeticCalculatorApplication {
         SpringApplication.run(ArithmeticCalculatorApplication.class, args);
     }
 
+    /*
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
@@ -40,5 +41,6 @@ public class ArithmeticCalculatorApplication {
     public String getAllowedUrl(){
         return env.getProperty("cors.allowed-frontend-url");
     }
+    */
 
 }
