@@ -8,9 +8,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PostMapping;
 
-@CrossOrigin(maxAge = 3600)
+
 @RestController
 @RequestMapping("/api/v1")
 public class UserController {
@@ -25,7 +28,7 @@ public class UserController {
         logger.info("UserController::createUser");
         return userService.saveUser(userRequest);
     }
-    @CrossOrigin(origins = "https://calculator-frontend.herokuapp.com", allowedHeaders = "Requestor-Type")
+
     @PostMapping("/login")
     public ResponseEntity<User> login(@RequestBody UserRequest userRequest) throws ResourceNotFoundException {
         logger.info("UserController::login");
