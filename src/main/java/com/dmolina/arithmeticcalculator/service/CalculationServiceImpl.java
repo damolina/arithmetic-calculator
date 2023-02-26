@@ -98,7 +98,7 @@ public class CalculationServiceImpl implements CalculationService{
             if(isSimpleOperation(operationCalculated)){
                 operationId = getOperationId(operationCalculated);
             }
-            if(totalAmount <= initialUserBalance){
+            if(totalAmount > 0 && totalAmount <= initialUserBalance){
                 RecordRequest recordRequest = new RecordRequest(operationId,calculation.getCalculation(), userId,totalAmount,finalUserBalance,resultOperationCalculated.toString());
                 recordService.saveRecord(recordRequest);
                 balanceService.updateUserBalance(userId,finalUserBalance);
